@@ -1,0 +1,46 @@
+.app-header {
+    background-color: var(--bg-surface);
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+.app-content {
+    padding: 80px 15px 90px 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+.view { display: none; animation: fadeIn 0.3s ease; }
+.view.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--bg-surface);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--border);
+    z-index: 100;
+}
+.nav-item {
+    color: var(--text-muted);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.75rem;
+    gap: 5px;
+    transition: color 0.3s;
+    width: 20%;
+}
+.nav-item i { font-size: 1.2rem; }
+.nav-item.active { color: var(--primary); }
+
